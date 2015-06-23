@@ -1,9 +1,11 @@
-package tommy_kw.esoutline;
+package tommy_kw.esoutline.activity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import tommy_kw.esoutline.R;
 
 
 public class MainActivity extends ActionBarActivity {
