@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: "sonar-runner"
+apply plugin: 'com.android.databinding'
 
 android {
     compileSdkVersion 22
@@ -22,6 +24,11 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:support-annotations:22.2.0'
+    compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.orhanobut:logger:1.10'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'io.reactivex:rxandroid:0.24.0'
+    compile 'io.reactivex:rxjava:1.0.11'
 }
