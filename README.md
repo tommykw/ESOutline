@@ -1,18 +1,18 @@
 # ESOutline
 ESOutline is simple feed reader application for Android.
 
-# Libraries Used
-## HTTP Client
+# Libraries Used  
+## HTTP Client  
 - OkHttp
-## Dependency Injection
+## Dependency Injection  
 - Dagger 2
-## View Injection
+## View Injection  
 - Data Binding 
-## Async Control
+## Async Control  
 - RxJava 
-## Logger
+## Logger  
 - orhanobut/logger
-## ORM
+## ORM  
 
 # License
 This application is free software; you can redistribute it and/or modify it under the terms of the Apache License 2.0.
