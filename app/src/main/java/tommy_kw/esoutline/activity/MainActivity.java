@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
 
-        setSupportActionBar(mToolbar);
+        //This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead.
+        //setSupportActionBar(mToolbar);
 
         final ActionBar ab = getSupportActionBar();
         if (ab != null) {
@@ -43,14 +44,18 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.addTab(mTabLayout.newTab().setText("xxxx03"));
         mTabLayout.addTab(mTabLayout.newTab().setText("xxxx04"));
         mTabLayout.addTab(mTabLayout.newTab().setText("xxxx05"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("xxxx06"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("xxxx07"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("xxxx08"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("xxxx09"));
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
