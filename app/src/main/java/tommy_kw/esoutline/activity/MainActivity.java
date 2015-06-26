@@ -43,11 +43,6 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.addTab(mTabLayout.newTab().setText("xxxx02"));
         mTabLayout.addTab(mTabLayout.newTab().setText("xxxx03"));
         mTabLayout.addTab(mTabLayout.newTab().setText("xxxx04"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("xxxx05"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("xxxx06"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("xxxx07"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("xxxx08"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("xxxx09"));
     }
 
     @Override
