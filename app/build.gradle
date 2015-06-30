@@ -26,6 +26,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:support-annotations:22.2.0'
+    compile 'com.google.dagger:dagger:2.0.1'
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.orhanobut:logger:1.10'
     compile 'com.squareup.okhttp:okhttp:2.4.0'

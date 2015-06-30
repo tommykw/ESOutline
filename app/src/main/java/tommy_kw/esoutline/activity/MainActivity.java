@@ -12,10 +12,22 @@ import android.view.MenuItem;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.orhanobut.logger.Logger;
+
+import java.util.Collections;
+import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import rx.Observable;
+import rx.android.app.AppObservable;
+import rx.functions.Action1;
+import rx.functions.Func1;
 import tommy_kw.esoutline.R;
+import tommy_kw.esoutline.api.ThinkSpainApi;
+import tommy_kw.esoutline.model.ThinkSpainEntry;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     Toolbar mToolbar;
     @InjectView(R.id.tab_layout)
     TabLayout mTabLayout;
+    @Inject
+    ThinkSpainApi mThinkSpainApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +53,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
         initTabLayout();
+
+        Observable<List<ThinkSpainEntry>> observable;
+        observable = mThinkSpainApi.getEntries();
+        AppObservable.bindFragment(this, observable)
+                .doOnNext(new Action1<List<ThinkSpainEntry>>() {
+                    @Override
+                    public void call(List<ThinkSpainEntry> items) {
+                        Logger.w("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! rx");
+                    }
+                }).onErrorReturn(new Func1<Throwable, List<ThinkSpainEntry>>() {
+                    @Override
+                    public List<ThinkSpainEntry> call(Throwable throwable) {
+                        return Collections.emptyList();
+                    }
+                });
+
     }
 
     private void initTabLayout() {

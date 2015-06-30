@@ -1,6 +1,7 @@
 package tommy_kw.esoutline;
 
 import android.app.Application;
+import android.support.annotation.NonNull;
 
 import com.orhanobut.logger.Logger;
 
@@ -11,6 +12,9 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+
         Logger.init("ESOutline");
+
     }
 }
