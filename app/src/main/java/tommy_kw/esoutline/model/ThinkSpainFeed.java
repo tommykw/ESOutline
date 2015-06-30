@@ -10,5 +10,5 @@ import java.util.List;
  */
 public class ThinkSpainFeed {
     @ElementList(name = "item", inline = true)
-    public List<ThinkSpainFeed> items;
+    public List<ThinkSpainEntry> items;
 }
