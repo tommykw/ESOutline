@@ -13,7 +13,7 @@ import tommy_kw.esoutline.di.DaggerAppComponent;
  * Created by tomita on 15/06/23.
  */
 public class App extends Application {
-    private AppComponent mAppComponent;
+    private static AppComponent sAppComponent;
 
     @Override
     public void onCreate() {
@@ -24,8 +24,13 @@ public class App extends Application {
     }
 
     private void initInjector() {
-        mAppComponent = DaggerAppComponent.builder()
+        sAppComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
+    }
+
+    @NonNull
+    public static AppComponent getAppComponent() {
+        return sAppComponent;
     }
 }

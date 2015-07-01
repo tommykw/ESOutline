@@ -1,5 +1,7 @@
 package tommy_kw.esoutline.api;
 
+import com.orhanobut.logger.Logger;
+
 import java.util.List;
 
 import retrofit.RequestInterceptor;
@@ -30,7 +32,8 @@ public class ThinkSpainApi {
                 .setClient(client)
                 .setConverter(new SimpleXMLConverter())
                 .setRequestInterceptor(requestInterceptor)
-                .setLogLevel(BuildConfig.DEBUG ? RestAdapter.LogLevel.BASIC : RestAdapter.LogLevel.NONE)
+                //.setLogLevel(BuildConfig.DEBUG ? RestAdapter.LogLevel.BASIC : RestAdapter.LogLevel.NONE)
+                .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setEndpoint(ENDPOINT)
                 .build();
         mFeedService = mFeedAdapter.create(FeedService.class);
@@ -40,6 +43,7 @@ public class ThinkSpainApi {
         return mFeedService.getFeeds().map(new Func1<ThinkSpainFeed, List<ThinkSpainEntry>>() {
             @Override
             public List<ThinkSpainEntry> call(ThinkSpainFeed feed) {
+                Logger.w("unkotaretare !!!!!!!!!!!!!! ");
                 return feed.items;
             }
         });

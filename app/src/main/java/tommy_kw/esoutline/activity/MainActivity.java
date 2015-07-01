@@ -25,6 +25,7 @@ import rx.Observable;
 import rx.android.app.AppObservable;
 import rx.functions.Action1;
 import rx.functions.Func1;
+import tommy_kw.esoutline.App;
 import tommy_kw.esoutline.R;
 import tommy_kw.esoutline.api.ThinkSpainApi;
 import tommy_kw.esoutline.model.ThinkSpainEntry;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        //App.getAppComponent¥
+        App.getAppComponent().inject(this);
 
         //This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead.
         //setSupportActionBar(mToolbar);
@@ -54,9 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         initTabLayout();
 
-        Observable<List<ThinkSpainEntry>> observable;
-        observable = mThinkSpainApi.getEntries();
-        AppObservable.bindFragment(this, observable)
+        AppObservable.bindActivity(this, mThinkSpainApi.getEntries())
                 .doOnNext(new Action1<List<ThinkSpainEntry>>() {
                     @Override
                     public void call(List<ThinkSpainEntry> items) {
@@ -65,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
                 }).onErrorReturn(new Func1<Throwable, List<ThinkSpainEntry>>() {
                     @Override
                     public List<ThinkSpainEntry> call(Throwable throwable) {
+                        Logger.w("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 11 rx");
                         return Collections.emptyList();
                     }
                 });
-
     }
 
     private void initTabLayout() {

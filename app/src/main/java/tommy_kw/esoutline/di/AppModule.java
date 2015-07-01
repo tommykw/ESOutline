@@ -16,6 +16,7 @@ import dagger.Provides;
 import retrofit.RequestInterceptor;
 import retrofit.client.Client;
 import retrofit.client.OkClient;
+import tommy_kw.esoutline.api.AppRequestInterceptor;
 import tommy_kw.esoutline.api.ThinkSpainApi;
 
 /**
@@ -47,6 +48,11 @@ public class AppModule {
         OkHttpClient httpClient = new OkHttpClient();
         httpClient.setCache(cache);
         return httpClient;
+    }
+
+    @Provides
+    public RequestInterceptor provideRequestInterceptor(Context context) {
+        return new AppRequestInterceptor(context);
     }
 
     @Provides
