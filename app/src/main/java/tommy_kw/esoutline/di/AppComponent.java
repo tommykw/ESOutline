@@ -11,5 +11,5 @@ import tommy_kw.esoutline.activity.MainActivity;
 @Singleton
 @Component(modules = {AppModule.class})
 public interface AppComponent {
-    void inject(MainActivity activity);
+    //void inject(MainActivity activity);
 }

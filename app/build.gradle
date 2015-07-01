@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: "sonar-runner"
 apply plugin: 'com.android.databinding'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 22
@@ -23,14 +24,30 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // support library
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:support-annotations:22.2.0'
+
+    // Dagger2
     compile 'com.google.dagger:dagger:2.0.1'
+    apt 'com.google.dagger:dagger-compiler:2.0.1'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+
+    // ButterKnife
     compile 'com.jakewharton:butterknife:6.1.0'
+
+    // Logger
     compile 'com.orhanobut:logger:1.10'
+
+    // OkHttp
     compile 'com.squareup.okhttp:okhttp:2.4.0'
+
+    // Retrofit
     compile 'com.squareup.retrofit:retrofit:1.9.0'
+
+    // RxJava
     compile 'io.reactivex:rxandroid:0.24.0'
     compile 'io.reactivex:rxjava:1.0.11'
     compile('com.squareup.retrofit:converter-simplexml:1.9.0') {
