@@ -10,51 +10,43 @@ import tommy_kw.esoutline.R;
 /**
  * Created by tomita on 15/07/01.
  */
-public class ContentRecyclerViewHolder extends RecyclerView.ViewHolder {
+public class ContentRecyclerViewAdapter extends RecyclerView.ViewHolder {
 
     private String mUrl;
     private CardView cardView;
     private TextView titleView;
     private TextView  descriptionView;
     private TextView  dateView;
-//    protected RecyclerViewListener mListener;
+    protected RecyclerViewListener mListener;
 
-    public ContentRecyclerViewHolder(View view) {
+    public ContentRecyclerViewAdapter(View view) {
         super(view);
-//        mListener = null;
-//        findView(view);
-//        setEvent();
+        mListener = null;
+        findView(view);
+        setEvent();
     }
 
-//    public ContentRecyclerViewHolder(View view, RecyclerViewListener listener) {
-//        super(view, listener);
-//        mListener = listener;
-//        findView(view);
-//        setEvent();
-//    }
-//
-//    @Override
-//    protected void findView(View v){
+    protected void findView(View v){
 //        cardView = (CardView) v.findViewById(R.id.card_view);
 //        imgThumbnail = (CustomImageView) v.findViewById(R.id.img_thumbnail);
 //        titleView = (TextView) v.findViewById(R.id.text_title);
 //        descriptionView = (TextView) v.findViewById(R.id.text_description);
 //        dateView   =(TextView)v.findViewById(R.id.text_date);
-//        mUrl = null;
-//    }
+        mUrl = null;
+    }
 //
 //    @Override
-//    protected void setEvent() {
-//        cardView.setOnClickListener( new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
+    protected void setEvent() {
+        cardView.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
 //                if( mListener != null ){
 //                    if( Utilities.isEmpty(mUrl))return;
 //                    mListener.onClickedView(mUrl);
 //                }
-//            }
-//        });
-//    }
+            }
+        });
+    }
 //
 //    @Override
 //    public void bind(ListData listData){
@@ -87,7 +79,7 @@ public class ContentRecyclerViewHolder extends RecyclerView.ViewHolder {
 //        }
 //    }
 //
-//    public interface RecyclerViewListener{
-//        public void onClickedView(String mUrl);
-//    }
+    public interface RecyclerViewListener{
+        void onClickedView(String mUrl);
+    }
 }

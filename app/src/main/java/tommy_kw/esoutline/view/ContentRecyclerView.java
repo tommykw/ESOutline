@@ -19,13 +19,12 @@ import static tommy_kw.esoutline.R.*;
 /**
  * Created by tomita on 15/07/01.
  */
-public class ContentRecyclerView extends RecyclerView implements LoaderManager.LoaderCallbacks<List<DesingInfo>>{
-    public interface ContentRecyclerViewListener {
+public class ContentRecyclerView extends RecyclerView implements LoaderManager.LoaderCallbacks<List<DesingInfo>>{public interface ContentRecyclerViewListener {
         void openWebPage(String url);
     }
 
     private ContentRecyclerViewListener mListener;
-    //private ContentRecyclerViewAdapter mAdapter;
+    private ContentRecyclerViewAdapter mAdapter;
     private SwipeRefreshLayout mRefresh;
 
     @Override
