@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import tommy_kw.esoutline.ContentLoader;
 import tommy_kw.esoutline.DesingInfo;
 import tommy_kw.esoutline.R;
 import tommy_kw.esoutline.adapter.ContentRecyclerViewAdapter;
@@ -32,6 +33,7 @@ public class ContentRecyclerView extends RecyclerView implements LoaderManager.L
     public Loader<List<DesingInfo>> onCreateLoader(int id, Bundle args) {
         String url = args.getString("url");
         String className = args.getString("className");
+        return new ContentLoader(getContext(), url, className);
     }
 
     @Override
