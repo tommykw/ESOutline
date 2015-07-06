@@ -13,6 +13,7 @@ import java.util.List;
 
 import tommy_kw.esoutline.DesingInfo;
 import tommy_kw.esoutline.R;
+import tommy_kw.esoutline.adapter.ContentRecyclerViewAdapter;
 
 import static tommy_kw.esoutline.R.*;
 

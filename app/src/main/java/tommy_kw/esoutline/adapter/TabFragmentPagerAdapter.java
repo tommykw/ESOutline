@@ -25,9 +25,10 @@ public class TabFragmentPagerAdapter  extends FragmentPagerAdapter {
         if(mList == null ) return null;
         if( mList.size() <= position ) return null;
         DesingInfo item = mList.get(position);
-        //ContentFragment fragment = ContentFragment.newInstance(position, item.getApi(), item.getClassName());
-        //return fragment;
+        ContentFragment fragment = new ContentFragment();
+        return fragment;
     }
+
     @Override
     public int getCount() {
         if( mList == null ){

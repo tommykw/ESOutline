@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import tommy_kw.esoutline.R;
+import tommy_kw.esoutline.view.ContentRecyclerView;
 
 /**
  * Created by tomita on 15/07/01.
@@ -54,18 +55,16 @@ public class ContentFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_content, container, false);
         findView(view);
         setEvent();
-        initialize();
         return view;
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-        uninitialize();
     }
 
     public void findView(View v){
-        mListView = (ContentRecyclerView)v.findViewById(R.id.list);
+        //mListView = (ContentRecyclerView)v.findViewById(R.id.list);
         mRefresh = (SwipeRefreshLayout)v.findViewById(R.id.refresh);
     }
     public void setEvent(){
@@ -75,10 +74,10 @@ public class ContentFragment extends Fragment {
                 // reload
             }
         });
-        mListView.setContentRecyclerViewListener(new ContentRecyclerView.CustomRecyclerViewListener() {
-            @Override
-            public void openWebPage(String url) {
-            }
-        });
+//        mListView.setContentRecyclerViewListener(new ContentRecyclerView.CustomRecyclerViewListener() {
+//            @Override
+//            public void openWebPage(String url) {
+//            }
+//        });
     }
 }

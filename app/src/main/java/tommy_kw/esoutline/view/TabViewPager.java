@@ -51,7 +51,8 @@ public class TabViewPager extends ViewPager {
             if(mList == null ) return null;
             if( mList.size() <= position ) return null;
             DesingInfo item = mList.get(position);
-            ContentFragment fragment = ContentFragment.newInstance(position, item.getApi(), item.getClassName());
+            //ContentFragment fragment = ContentFragment.newInstance(position, item.getApi(), item.getClassName());
+            ContentFragment fragment = new ContentFragment();
             return fragment;
         }
         @Override
