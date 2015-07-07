@@ -1,7 +1,7 @@
 # Built application files
 *.apk
 *.ap_
-app/*.iml
+*.iml
 
 # Files for the Dalvik VM
 *.dex
@@ -28,6 +28,4 @@ proguard/
 *.log
 
 # idea
-.idea/libraries/*
-.idea/rebel_project.xml
-.idea/workspace.xml
+.idea/*
