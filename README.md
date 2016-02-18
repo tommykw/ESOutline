@@ -4,6 +4,7 @@ ESOutline is simple feed reader application for Android.
 # Libraries Used  
 
 ## HTTP Client  
+- Retrofit
 - OkHttp
 
 ## Dependency Injection  
